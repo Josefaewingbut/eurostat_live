@@ -1,4 +1,4 @@
-name: Update HICP (Eurostat)
+name: Eurostat Auto Update
 
 on:
   schedule:
