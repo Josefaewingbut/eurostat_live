@@ -28,14 +28,16 @@ jobs:
             any::tidyr
             any::readr
             any::lubridate
-
-      - name: Run update script
-        run: Rscript scripts/update_hicp.R
-
+            
+            - name: Run R scripts
+            run: |
+            Rscript scripts/update_hicp.R
+            Rscript scripts/update_debt.R
+    
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add hicp_inflation_yoy_monthly_EA20_DE_FR_IT_ES.csv
+          git add git add *.csv
           git diff --staged --quiet || git commit -m "Auto-update HICP inflation CSV"
           git push
