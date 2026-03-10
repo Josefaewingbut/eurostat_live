@@ -24,7 +24,7 @@ jobs:
           Rscript -e "install.packages(c('eurostat','dplyr','tidyr','readr'), repos='https://cloud.r-project.org')"
 
       - name: Run inflation script
-        run: Rscript inflation_script.R
+        run: Rscript scripts/update_inflation.R
 
       - name: Commit and push updated CSV
         run: |
