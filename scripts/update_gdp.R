@@ -1,3 +1,4 @@
+options(timeout = 600)
 suppressPackageStartupMessages({
   library(eurostat)
   library(dplyr)
@@ -16,3 +17,4 @@ print(sort(unique(data_raw$na_item)))
 
 message("geo disponibles:")
 print(sort(unique(data_raw$geo)))
+
