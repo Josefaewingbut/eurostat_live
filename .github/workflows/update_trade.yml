@@ -31,10 +31,10 @@ jobs:
       - name: Run trade script
         run: Rscript scripts/update_trade.R
 
-      - name: Commit and push updated CSV
+      - name: Commit and push updated CSV files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add trade_live_data.csv
-          git commit -m "update trade data" || echo "no changes"
+          git add trade_live_data.csv trade_exports_by_country.csv trade_imports_by_country.csv
+          git commit -m "update trade data files" || echo "no changes"
           git push
